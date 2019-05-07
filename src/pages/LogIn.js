@@ -6,6 +6,13 @@ export default class LogIn extends Component {
   static navigationOptions = ({ navigation }) => ({
     headerStyle: {backgroundColor: "rgb(139, 27, 140)", borderBottomWidth: 0 }
   })
+
+  onLoginPressed = () => {
+
+    const { navigate } = this.props.navigation
+
+    navigate("Qrcode")
+  }
   render() {
     return(
       <LinearGradient style={{flex: 1}} colors={["rgb(139, 27, 140)", "rgb(247, 132, 98)"]}>
@@ -81,7 +88,6 @@ const styles = StyleSheet.create({
   logInText: {
     backgroundColor: "transparent",
     color: "white",
-    fontFamily: ".SFNSDisplay",
     fontSize: 42,
     fontStyle: "normal",
     fontWeight: "normal",
