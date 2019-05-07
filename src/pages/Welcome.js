@@ -28,11 +28,11 @@ export default class Welcome extends Component {
         <View style={styles.welcomeView}>
           <View style={styles.imageWrapper}>
             <Image
-              source={require("./../../assets/images/logo.png")}
+              source={require("./../../assets/images/pay-logo.png")}
               style={styles.logoImage}/>
           </View>
-          <Text style={styles.spacebookText}>Spacebook</Text>
-          <Text style={styles.conquerTheStarsText}>Conquer the stars{"\n"}from behind the screen.</Text>
+          <Text style={styles.spacebookText}>PesoPay</Text>
+          <Text style={styles.conquerTheStarsText}>Acepta cualquier crypto</Text>
           <View
             style={{
               flex: 1,
@@ -46,7 +46,7 @@ export default class Welcome extends Component {
                 source={require("./../../assets/images/icon-sign-up.png")}
                 style={styles.signUpButtonImage}/>
               <Text
-                style={styles.signUpButtonText}>SIGN UP</Text>
+                style={styles.signUpButtonText}>Regístrate</Text>
             </TouchableOpacity>
             <View
               style={{
@@ -60,7 +60,7 @@ export default class Welcome extends Component {
                 source={require("./../../assets/images/icon-log-in.png")}
                 style={styles.logInButtonImage}/>
               <Text
-                style={styles.logInButtonText}>LOG IN</Text>
+                style={styles.logInButtonText}>Iniciar sesión</Text>
             </TouchableOpacity>
           </View>
         </View>
