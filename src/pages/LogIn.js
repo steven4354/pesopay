@@ -12,20 +12,20 @@ export default class LogIn extends Component {
         <View
           style={styles.loginView}>
           <Text
-            style={styles.logInText}>Log in</Text>
+            style={styles.logInText}>Iniciar sesión</Text>
           <Text
-            style={styles.welcomeBackText}>Welcome back.{"\n"}The galaxy awaits you.</Text>
+            style={styles.welcomeBackText}>Bienvenido.{"\n"}Introduce tus detalles abajo.</Text>
           <View
             style={styles.loginFieldsView}>
             <TextInput
               autoCorrect={false}
-              placeholder="Your nickname"
+              placeholder="Correo electrónico"
               style={styles.yourNicknameTextInput}/>
             <View
               style={styles.separatorView}/>
             <TextInput
               autoCorrect={false}
-              placeholder="Your password"
+              placeholder="Contraseña"
               secureTextEntry={true}
               style={styles.yourPasswordTextInput}/>
           </View>
@@ -40,7 +40,7 @@ export default class LogIn extends Component {
               source={require("./../../assets/images/icon-log-in.png")}
               style={styles.loginButtonImage}/>
             <Text
-              style={styles.loginButtonText}>LOG IN</Text>
+              style={styles.loginButtonText}>INICIA SESION</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={this.onForgotYourPasswordPressed}
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 0,
-    width: 150,
+    // width: 150,
     height: 18,
     marginBottom: 19,
   },

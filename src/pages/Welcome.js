@@ -28,7 +28,7 @@ export default class Welcome extends Component {
         <View style={styles.welcomeView}>
           <View style={styles.imageWrapper}>
             <Image
-              source={require("./../../assets/images/pay-logo.png")}
+              source={require("./../../assets/images/pay-logo-3.png")}
               style={styles.logoImage}/>
           </View>
           <Text style={styles.spacebookText}>PesoPay</Text>
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
   signUpButton: {
     backgroundColor: "white",
-    borderRadius: 2,
+    borderRadius: 4,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   },
   logInButton: {
     backgroundColor: "white",
-    borderRadius: 2,
+    borderRadius: 4,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
@@ -186,5 +186,3 @@ const styles = StyleSheet.create({
     marginTop: 20,
   }
   })
-
-
