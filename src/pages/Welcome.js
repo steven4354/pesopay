@@ -2,11 +2,40 @@ import React, {Component} from 'react';
 import {TouchableOpacity, View, Text, Button, StyleSheet, Image} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-
+class HeaderGradient extends Component {
+  render() {
+    return(
+      <LinearGradient
+        start={{
+					x: 0.31,
+					y: 1.1,
+				}}
+				end={{
+					x: 0.69,
+					y: -0.1,
+				}}
+        style={{flex: 1}}
+        colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}>
+      </LinearGradient>
+    )
+  }
+}
 export default class Welcome extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerStyle: {backgroundColor: "rgb(139, 27, 140)", borderBottomWidth: 0 }
+    header: HeaderGradient,
+    headerStyle: {
+      backgroundColor: "transparent",
+      borderBottomWidth: 0,
+      shadowOpacity: 0,
+        shadowOffset: {
+          height: 0
+        },
+      shadowRadius: 0,
+      borderBottomWidth: 0,
+      elevation: 0
+    }
   })
+
   onSignUpPressed = () => {
 
     const { navigate } = this.props.navigation
@@ -23,16 +52,29 @@ export default class Welcome extends Component {
 
   render() {
     return(
-      <LinearGradient style={{flex: 1}} colors={["rgb(139, 27, 140)", "rgb(247, 132, 98)"]}>
+      <LinearGradient
+        start={{
+					x: 0.31,
+					y: 1.1,
+				}}
+				end={{
+					x: 0.69,
+					y: -0.1,
+				}}
+        style={{flex: 1}}
+        colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}>
 
         <View style={styles.welcomeView}>
           <View style={styles.imageWrapper}>
             <Image
-              source={require("./../../assets/images/pay-logo-3.png")}
+              source={require("./../../assets/images/pay-logo-7.png")}
               style={styles.logoImage}/>
           </View>
-          <Text style={styles.spacebookText}>PesoPay</Text>
-          <Text style={styles.conquerTheStarsText}>Acepta cualquier crypto</Text>
+          <View style={{flexDirection: "row"}}>
+            <Text style={styles.spacebookText}>PesoPay</Text>
+            <Text style={styles.spacebookTextSuperscript}>TM</Text>
+          </View>
+          <Text style={styles.conquerTheStarsText}>Acepta cualquier crypto {"\n"} y convertir a peso.</Text>
           <View
             style={{
               flex: 1,
@@ -63,6 +105,8 @@ export default class Welcome extends Component {
                 style={styles.logInButtonText}>Iniciar sesión</Text>
             </TouchableOpacity>
           </View>
+          <Text
+						style={styles.supernovaStudioText}>© 2019 PesoPay Global</Text>
         </View>
       </LinearGradient>
     )
@@ -77,12 +121,15 @@ const styles = StyleSheet.create({
   },
   logoImage: {
     backgroundColor: "transparent",
-    shadowColor: "rgba(0, 0, 0, 0.2)",
+    // shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
     resizeMode: "center",
     width: "100%",
     height: "100%",
+    shadowColor: "black",
+    shadowOffset: { height: 8},
+    // shadowOpacity: 0.3,
   },
   welcomeView: {
     width: "100%",
@@ -111,7 +158,7 @@ const styles = StyleSheet.create({
   },
   signUpButton: {
     backgroundColor: "white",
-    borderRadius: 4,
+    borderRadius: 2,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
@@ -135,7 +182,7 @@ const styles = StyleSheet.create({
   },
   logInButton: {
     backgroundColor: "white",
-    borderRadius: 4,
+    borderRadius: 2,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
@@ -176,6 +223,15 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     marginTop: 60,
   },
+  spacebookTextSuperscript: {
+    color: "white",
+    fontSize: 20,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textAlign: "center",
+    backgroundColor: "transparent",
+    marginTop: 68,
+  },
   conquerTheStarsText: {
     color: "white",
     fontSize: 18,
@@ -184,5 +240,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "transparent",
     marginTop: 20,
-  }
-  })
+  },
+  supernovaStudioText: {
+		color: "white",
+		fontSize: 15,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+		backgroundColor: "transparent",
+		marginBottom: 20,
+	},
+})
