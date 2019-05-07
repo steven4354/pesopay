@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import Welcome from "./src/pages/Welcome";
 
 class HomePage extends Component {
   render() {
@@ -19,6 +20,7 @@ class HomePage extends Component {
 }
 
 const MainNavigator = createStackNavigator({
+  Welcome: {screen: Welcome},
   HomePage: {screen: HomePage}
 });
 

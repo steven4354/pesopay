@@ -5,13 +5,14 @@
 //  Created by Supernova.
 //  Copyright © 2018 Supernova. All rights reserved.
 //
+//
+// import { Text, StyleSheet, View, TouchableOpacity, Animated, Easing, Image } from "react-native"
+import React, {Component} from "react";
+import { Text, View } from "react-native"
+// import { LinearGradient } from "expo"
 
-import { Text, StyleSheet, View, TouchableOpacity, Animated, Easing, Image } from "react-native"
-import React, {Component} from "react"
-import { LinearGradient } from "expo"
 
-
-export default class Welcome extends React.Component {
+export default class Welcome extends Component {
   //
   // static navigationOptions = ({ navigation }) => {
   //
@@ -77,7 +78,7 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <View>
-        <Text>Hello</Text>
+        <Text>Welcome</Text>
       </View>
     )
 
@@ -151,113 +152,113 @@ export default class Welcome extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  welcomeViewLinearGradient: {
-    flex: 1,
-  },
-  welcomeView: {
-    width: "100%",
-    height: "100%",
-    alignItems: "center",
-  },
-  logoImage: {
-    backgroundColor: "transparent",
-    shadowColor: "rgba(0, 0, 0, 0.2)",
-    shadowRadius: 25,
-    shadowOpacity: 1,
-    resizeMode: "center",
-    width: "100%",
-    height: "100%",
-  },
-  logoImageAnimated: {
-    width: 120,
-    height: 120,
-    marginTop: 100,
-  },
-  spacebookText: {
-    backgroundColor: "transparent",
-    color: "white",
-    fontFamily: ".SFNSDisplay",
-    fontSize: 42,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "center",
-    marginTop: 60,
-  },
-  conquerTheStarsText: {
-    backgroundColor: "transparent",
-    color: "white",
-    fontSize: 18,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "center",
-    marginTop: 20,
-  },
-  viewView: {
-    backgroundColor: "transparent",
-    alignSelf: "stretch",
-    height: 60,
-    marginLeft: 30,
-    marginRight: 30,
-    marginBottom: 85,
-    flexDirection: "row",
-    alignItems: "flex-end",
-  },
-  signUpButton: {
-    backgroundColor: "white",
-    borderRadius: 2,
-    shadowColor: "rgba(0, 0, 0, 0.2)",
-    shadowRadius: 25,
-    shadowOpacity: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 0,
-    width: 148,
-    height: 60,
-  },
-  signUpButtonText: {
-    color: "rgb(217, 103, 110)",
-    fontSize: 15,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "center",
-  },
-  signUpButtonImage: {
-    resizeMode: "contain",
-    marginRight: 10,
-  },
-  logInButton: {
-    backgroundColor: "white",
-    borderRadius: 2,
-    shadowColor: "rgba(0, 0, 0, 0.2)",
-    shadowRadius: 25,
-    shadowOpacity: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 0,
-    width: 148,
-    height: 60,
-  },
-  logInButtonText: {
-    color: "rgb(218, 104, 109)",
-    fontSize: 15,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "center",
-  },
-  logInButtonImage: {
-    resizeMode: "contain",
-    marginRight: 10,
-  },
-  supernovaStudioText: {
-    backgroundColor: "transparent",
-    color: "white",
-    fontSize: 15,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "center",
-    marginBottom: 20,
-  },
-})
+// const styles = StyleSheet.create({
+//   welcomeViewLinearGradient: {
+//     flex: 1,
+//   },
+//   welcomeView: {
+//     width: "100%",
+//     height: "100%",
+//     alignItems: "center",
+//   },
+//   logoImage: {
+//     backgroundColor: "transparent",
+//     shadowColor: "rgba(0, 0, 0, 0.2)",
+//     shadowRadius: 25,
+//     shadowOpacity: 1,
+//     resizeMode: "center",
+//     width: "100%",
+//     height: "100%",
+//   },
+//   logoImageAnimated: {
+//     width: 120,
+//     height: 120,
+//     marginTop: 100,
+//   },
+//   spacebookText: {
+//     backgroundColor: "transparent",
+//     color: "white",
+//     fontFamily: ".SFNSDisplay",
+//     fontSize: 42,
+//     fontStyle: "normal",
+//     fontWeight: "normal",
+//     textAlign: "center",
+//     marginTop: 60,
+//   },
+//   conquerTheStarsText: {
+//     backgroundColor: "transparent",
+//     color: "white",
+//     fontSize: 18,
+//     fontStyle: "normal",
+//     fontWeight: "normal",
+//     textAlign: "center",
+//     marginTop: 20,
+//   },
+//   viewView: {
+//     backgroundColor: "transparent",
+//     alignSelf: "stretch",
+//     height: 60,
+//     marginLeft: 30,
+//     marginRight: 30,
+//     marginBottom: 85,
+//     flexDirection: "row",
+//     alignItems: "flex-end",
+//   },
+//   signUpButton: {
+//     backgroundColor: "white",
+//     borderRadius: 2,
+//     shadowColor: "rgba(0, 0, 0, 0.2)",
+//     shadowRadius: 25,
+//     shadowOpacity: 1,
+//     flexDirection: "row",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     padding: 0,
+//     width: 148,
+//     height: 60,
+//   },
+//   signUpButtonText: {
+//     color: "rgb(217, 103, 110)",
+//     fontSize: 15,
+//     fontStyle: "normal",
+//     fontWeight: "normal",
+//     textAlign: "center",
+//   },
+//   signUpButtonImage: {
+//     resizeMode: "contain",
+//     marginRight: 10,
+//   },
+//   logInButton: {
+//     backgroundColor: "white",
+//     borderRadius: 2,
+//     shadowColor: "rgba(0, 0, 0, 0.2)",
+//     shadowRadius: 25,
+//     shadowOpacity: 1,
+//     flexDirection: "row",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     padding: 0,
+//     width: 148,
+//     height: 60,
+//   },
+//   logInButtonText: {
+//     color: "rgb(218, 104, 109)",
+//     fontSize: 15,
+//     fontStyle: "normal",
+//     fontWeight: "normal",
+//     textAlign: "center",
+//   },
+//   logInButtonImage: {
+//     resizeMode: "contain",
+//     marginRight: 10,
+//   },
+//   supernovaStudioText: {
+//     backgroundColor: "transparent",
+//     color: "white",
+//     fontSize: 15,
+//     fontStyle: "normal",
+//     fontWeight: "normal",
+//     textAlign: "center",
+//     marginBottom: 20,
+//   },
+// })
