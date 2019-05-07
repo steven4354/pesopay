@@ -4,8 +4,20 @@ import LinearGradient from 'react-native-linear-gradient';
 
 export default class LogIn extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerStyle: {backgroundColor: "rgb(139, 27, 140)", borderBottomWidth: 0 }
+    headerStyle: {
+      color: "white",
+      backgroundColor: "rgb(139, 27, 140)",
+      borderBottomWidth: 0,
+      shadowOpacity: 0,
+        shadowOffset: {
+          height: 0
+        },
+      shadowRadius: 0,
+      borderBottomWidth: 0,
+      elevation: 0
+    }
   })
+
   render() {
     return(
       <LinearGradient style={{flex: 1}} colors={["rgb(139, 27, 140)", "rgb(247, 132, 98)"]}>
