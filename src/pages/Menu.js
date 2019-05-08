@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: window.width,
     height: window.height,
-    backgroundColor: 'gray',
+    backgroundColor: 'blue',
     padding: 20,
   },
   avatarContainer: {
