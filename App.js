@@ -16,14 +16,16 @@ import QrCode from "./src/pages/QrCode"
 import Test from "./src/pages/Test";
 import Sample from "./src/pages/Sample";
 
+import RecieveCrypto from "./src/pages/RecieveCrypto"
 
 const MainNavigator = createStackNavigator({
   Welcome: {screen: Welcome},
   Signup: {screen: SignUp},
   Login: {screen: LogIn},
   Qrcode: {screen: QrCode},
-  Test: {screen: Test},
-  Sample: {screen: Sample}
+  Sample: {screen: Sample},
+  RecieveCrypto: {screen: RecieveCrypto},
+  Test: {screen: Test}
 });
 
 const App = createAppContainer(MainNavigator);
