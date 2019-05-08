@@ -13,7 +13,6 @@ export default class LogIn extends Component {
           height: 0
         },
       shadowRadius: 0,
-      borderBottomWidth: 0,
       elevation: 0
     }
   })

@@ -1,55 +1,59 @@
-import React, {Component} from 'react';
-import {Modal, Text, TouchableHighlight, View, Alert} from 'react-native';
+import React, { Component } from "react";
+import { Platform, StyleSheet, Text, View, Alert, YellowBox} from "react-native";
+import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from "react-native-popup-menu";
 
-export default class test extends Component {
-  state = {
-    modalVisible: false,
-  };
+export default class Test extends Component {
 
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
+  constructor(props) {
+    super(props);
+    YellowBox.ignoreWarnings([
+      'Warning: isMounted(...) is deprecated', 'Module RCTImageLoader'
+    ]);
   }
 
   render() {
     return (
-      <View style={{marginTop: 22}}>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={this.state.modalVisible}
-          onRequestClose={() => {
-            Alert.alert('Modal has been closed.');
-          }}>
-          <View style={{
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center'}}>
-            <View style={{
-              width: 300,
-              height: 300}}>
-              <View style={{marginTop: 22}}>
-                <View>
-                  <Text>Hello World!</Text>
+      <MenuProvider style={{ flexDirection: "column", padding: 30 }}>
+        <Menu onSelect={value => alert(`You Clicked : ${value}`)}>
 
-                  <TouchableHighlight
-                    onPress={() => {
-                      this.setModalVisible(!this.state.modalVisible);
-                    }}>
-                    <Text>Hide Modal</Text>
-                  </TouchableHighlight>
-                </View>
-              </View>
-            </View>
-          </View>
-        </Modal>
-        <TouchableHighlight
-          onPress={() => {
-            this.setModalVisible(true);
-          }}>
-          <Text>Show Modal</Text>
-        </TouchableHighlight>
-      </View>
+          <MenuTrigger  >
+            <Text style={styles.headerText}>DropDown Menu</Text>
+          </MenuTrigger  >
+
+          <MenuOptions>
+            <MenuOption value={"Login"}>
+              <Text style={styles.menuContent}>Login</Text>
+            </MenuOption>
+            <MenuOption value={"Register"}>
+              <Text style={styles.menuContent}>Register</Text>
+            </MenuOption>
+            <MenuOption value={"Download"}>
+              <Text style={styles.menuContent}>Download</Text>
+            </MenuOption>
+            <MenuOption value={"Logout"}>
+              <Text style={styles.menuContent}>Logout</Text>
+            </MenuOption>
+            <MenuOption value={3} disabled={true}>
+              <Text style={styles.menuContent}>Disabled Menu</Text>
+            </MenuOption>
+          </MenuOptions>
+
+        </Menu>
+      </MenuProvider>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  headerText: {
+    fontSize: 20,
+    margin: 10,
+    fontWeight: "bold"
+  },
+  menuContent: {
+    color: "#000",
+    fontWeight: "bold",
+    padding: 2,
+    fontSize: 20
+  }
+});

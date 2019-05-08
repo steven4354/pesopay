@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
 import QRCode from 'react-native-qrcode';
 import LinearGradient from 'react-native-linear-gradient';
-import {Alert, Image, Modal, Text, TouchableHighlight, TouchableOpacity} from "react-native"
+import { AppRegistry, StyleSheet, View, TextInput, Alert, Image, Modal, Text,  TouchableHighlight, TouchableOpacity, YellowBox} from "react-native"
+import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from "react-native-popup-menu";
 
-import {
-  AppRegistry,
-  StyleSheet,
-  View,
-  TextInput
-} from 'react-native';
 
 class HelloWorld extends Component {
   state = {
@@ -16,8 +11,11 @@ class HelloWorld extends Component {
     modalVisible: false,
   };
 
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
+  constructor(props) {
+    super(props);
+    YellowBox.ignoreWarnings([
+      'Warning: isMounted(...) is deprecated', 'Module RCTImageLoader'
+    ]);
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -48,68 +46,33 @@ class HelloWorld extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{marginTop: 22}}>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={this.state.modalVisible}
-            onRequestClose={() => {
-              Alert.alert('Modal has been closed.');
-            }}>
-            <View style={{
-              flex: 1,
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}>
-              <View style={{
-                flexDirection: 'column',
-                alignItems: 'center',
-                width: 300,
-                height: 300,
-                backgroundColor: "#ffffff",
-                borderRadius: 30,
-                borderWidth: 0.5,
-                borderColor: '#d6d7da',
-                borderTopWidth: null
-              }}>
-                <View style={{marginTop: 10}}>
-                  <View>
-                    <View style={{
-                      borderRadius: 30,
-                      borderWidth: 0.5,
-                      borderColor: '#d6d7da',
-                      width: 300,
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                    }}>
-                      <Text style={{
-                        fontSize: 42,
-                        fontStyle: "normal",
-                        fontWeight: "normal",
-                        textAlign: "center",
-                        backgroundColor: "transparent",
-                      }}>Hello World!</Text>
-                    </View>
+        <MenuProvider style={{ flexDirection: "column", padding: 30 }}>
+          <Menu onSelect={value => alert(`You Clicked : ${value}`)}>
 
-                    <TouchableHighlight
-                      onPress={() => {
-                        this.setModalVisible(!this.state.modalVisible);
-                      }}>
-                      <Text>Close</Text>
-                    </TouchableHighlight>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </Modal>
-          <TouchableHighlight
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-            <Text>Change Crypto</Text>
-          </TouchableHighlight>
-        </View>
+            <MenuTrigger  >
+              <Text style={styles.headerText}>DropDown Menu</Text>
+            </MenuTrigger  >
+
+            <MenuOptions>
+              <MenuOption value={"Login"}>
+                <Text style={styles.menuContent}>Login</Text>
+              </MenuOption>
+              <MenuOption value={"Register"}>
+                <Text style={styles.menuContent}>Register</Text>
+              </MenuOption>
+              <MenuOption value={"Download"}>
+                <Text style={styles.menuContent}>Download</Text>
+              </MenuOption>
+              <MenuOption value={"Logout"}>
+                <Text style={styles.menuContent}>Logout</Text>
+              </MenuOption>
+              <MenuOption value={3} disabled={true}>
+                <Text style={styles.menuContent}>Disabled Menu</Text>
+              </MenuOption>
+            </MenuOptions>
+
+          </Menu>
+        </MenuProvider>
         <TextInput
           style={styles.input}
           onChangeText={(text) => this.setState({text: text})}
@@ -143,6 +106,17 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 5,
     padding: 5,
+  },
+  headerText: {
+    fontSize: 20,
+    margin: 10,
+    fontWeight: "bold"
+  },
+  menuContent: {
+    color: "#000",
+    fontWeight: "bold",
+    padding: 2,
+    fontSize: 20
   }
 });
 
