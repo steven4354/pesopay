@@ -14,6 +14,7 @@ import SignUp from "./src/pages/SignUp";
 import LogIn from "./src/pages/LogIn";
 import QrCode from "./src/pages/QrCode"
 import Test from "./src/pages/Test";
+import Sample from "./src/pages/Sample";
 
 
 const MainNavigator = createStackNavigator({
@@ -21,7 +22,8 @@ const MainNavigator = createStackNavigator({
   Signup: {screen: SignUp},
   Login: {screen: LogIn},
   Qrcode: {screen: QrCode},
-  Test: {screen: Test}
+  Test: {screen: Test},
+  Sample: {screen: Sample}
 });
 
 const App = createAppContainer(MainNavigator);
