@@ -21,7 +21,7 @@ export default class LogIn extends Component {
 
     const { navigate } = this.props.navigation
 
-    navigate("Sample")
+    navigate("RecieveCrypto")
   }
   render() {
     return(

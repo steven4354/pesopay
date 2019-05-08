@@ -25,6 +25,7 @@ export default class Welcome extends Component {
     header: HeaderGradient,
     headerStyle: {
       backgroundColor: "transparent",
+      color: "white",
       borderBottomWidth: 0,
       shadowOpacity: 0,
         shadowOffset: {
@@ -122,13 +123,13 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     // shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
-    shadowOpacity: 1,
+    // shadowOpacity: 1,
     resizeMode: "center",
     width: "100%",
     height: "100%",
     shadowColor: "black",
     shadowOffset: { height: 8},
-    // shadowOpacity: 0.3,
+    shadowOpacity: 0.6,
   },
   welcomeView: {
     width: "100%",
@@ -224,7 +225,7 @@ const styles = StyleSheet.create({
   },
   spacebookTextSuperscript: {
     color: "white",
-    fontSize: 20,
+    fontSize: 17,
     fontStyle: "normal",
     fontWeight: "normal",
     textAlign: "center",
