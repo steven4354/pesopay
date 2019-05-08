@@ -1,74 +1,133 @@
 import React, { Component } from 'react'
 import QRCode from 'react-native-qrcode';
 import LinearGradient from 'react-native-linear-gradient';
-import {Alert, Image, Modal, Text, TouchableHighlight, TouchableOpacity} from "react-native"
+import {Alert, Image, Modal, TouchableHighlight, TouchableOpacity} from "react-native"
 
 import {
   AppRegistry,
   StyleSheet,
   View,
   TextInput,
-  Picker
+  Picker,
+  // Button
 } from 'react-native';
+
+import { Container, Header, Button, Content, ActionSheet, Text } from "native-base";
+var BUTTONS = [
+  { text: "Option 0", icon: "american-football", iconColor: "#2c8ef4" },
+  { text: "Option 1", icon: "analytics", iconColor: "#f42ced" },
+  { text: "Option 2", icon: "aperture", iconColor: "#ea943b" },
+  { text: "Delete", icon: "trash", iconColor: "#fa213b" },
+  { text: "Cancel", icon: "close", iconColor: "#25de5b" }
+];
+var DESTRUCTIVE_INDEX = 3;
+var CANCEL_INDEX = 4;
 
 class HelloWorld extends Component {
   // todo: change the text to not be bolded & revmove the gradiengt
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state
     return {
-      headerTransparent: true,
-      headerBackground: <LinearGradient
-        start={{
-          x: -0.01,
-          y: 0.51,
-        }}
-        end={{
-          x: 1.01,
-          y: 0.49,
-        }}
-        locations={[0, 1]}
-        colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}
-        style={styles.navigationBarGradient}/>,
+      // headerTransparent: true,
+      // headerBackground: <LinearGradient
+      //   start={{
+      //     x: -0.01,
+      //     y: 0.51,
+      //   }}
+      //   end={{
+      //     x: 1.01,
+      //     y: 0.49,
+      //   }}
+      //   locations={[0, 1]}
+      //   colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}
+      //   style={styles.navigationBarGradient}/>,
       title: "Receive Crypto",
       headerTintColor: "white",
       headerLeft: null,
       headerRight: null,
       headerStyle: {
-
+        
       },
     }
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <View>
-          <Text
-            style={styles.text}>
-            Change Crypto:
-          </Text>
+      <Container>
+        <View style={styles.container}>
+          <View>
+            <Text
+              style={styles.text}>
+              Change Crypto:
+            </Text>
+          </View>
+
+          <Picker
+            selectedValue={"java"}
+            style={{height: 50, width: 100}}
+            onValueChange={(itemValue, itemIndex) => {
+
+            }}>
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+          </Picker>
+
+          <View>
+            <Text
+              style={styles.text}>
+              Select Amount:
+            </Text>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center"
+            }}>
+            {/* <TextInput
+              style={{
+                backgroundColor: "gray",
+              }}
+              value={"1"}>
+            </TextInput> */}
+            {/*<RkTextInput placeholder='Login'/>*/}
+            <Content padder>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: BUTTONS,
+                      cancelButtonIndex: CANCEL_INDEX,
+                      destructiveButtonIndex: DESTRUCTIVE_INDEX,
+                      title: "Testing ActionSheet"
+                    },
+                    buttonIndex => {
+                      this.setState({ clicked: BUTTONS[buttonIndex] });
+                    }
+                  )}
+              >
+                <Text>Actionsheet</Text>
+              </Button>
+            </Content>
+
+            <Text>
+              COP
+            </Text>
+          </View>
+
+          <View
+            style={{
+              marginTop: 15,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}>
+            <Button
+              title="Generate deposit address"
+            />
+          </View>
         </View>
-
-        <Picker
-          selectedValue={"java"}
-          style={{height: 50, width: 100}}
-          onValueChange={(itemValue, itemIndex) => {
-
-          }}>
-          <Picker.Item label="Java" value="java" />
-          <Picker.Item label="JavaScript" value="js" />
-        </Picker>
-
-        <View>
-          <Text
-            style={styles.text}>
-            Select Amount:
-          </Text>
-        </View>
-
-        <TextInput>
-        </TextInput>
-      </View>
+      </Container>
     );
   };
 }

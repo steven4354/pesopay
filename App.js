@@ -15,7 +15,7 @@ import LogIn from "./src/pages/LogIn";
 import QrCode from "./src/pages/QrCode"
 import Test from "./src/pages/Test";
 import Sample from "./src/pages/Sample";
-
+import RecieveCryptoNativeBase from "./src/pages/RecieveCryptoNativeBase";
 import RecieveCrypto from "./src/pages/RecieveCrypto"
 
 const MainNavigator = createStackNavigator({
@@ -24,7 +24,7 @@ const MainNavigator = createStackNavigator({
   Login: {screen: LogIn},
   Qrcode: {screen: QrCode},
   Sample: {screen: Sample},
-  RecieveCrypto: {screen: RecieveCrypto},
+  RecieveCrypto: {screen: RecieveCryptoNativeBase},
   Test: {screen: Test}
 });
 
