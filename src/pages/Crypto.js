@@ -132,12 +132,12 @@ export default class PickerInputExample extends Component {
               <Icon name="card" />
               <Text>Card</Text>
             </Button>
-            <Button onPress={() => navigate('Crypto')} vertical>
-              <Icon name="logo-bitcoin" />
+            <Button vertical active>
+              <Icon active name="logo-bitcoin" />
               <Text>Crypto</Text>
             </Button>
-            <Button vertical active>
-              <Icon active name="cash" />
+            <Button onPress={() => navigate('RecieveCrypto')} vertical>
+              <Icon name="cash" />
               <Text>PesoPay</Text>
             </Button>
             <Button onPress={() => navigate('Account')} vertical>
