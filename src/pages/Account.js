@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { Icon, Footer, FooterTab, Button, Text, Container, Header, Content, Form, Item, Picker, Label, Input } from 'native-base';
 import QRCode from 'react-native-qrcode';
 import LinearGradient from "react-native-linear-gradient";
@@ -55,76 +55,92 @@ export default class PickerInputExample extends Component {
         <Header/>
         <Content>
           <View
-            style={{
-              justifyContent: "center",
-              alignItems: "center"
-            }}>
-            {
-              !this.state.showQr ?
-                <Text style={{marginTop: 100, marginLeft: 17, marginRight: 15, fontSize: 20, fontWeight: "bold"}}>Enter Transaction Details:</Text>
-                :
-                <Text style={{marginTop: 50, marginLeft: 17, marginRight: 15, fontSize: 20, fontWeight: "bold"}}>Edit Transaction Details</Text>
-            }
+          style={styles.profileView}>
+            <Image
+              source={require("./../../assets/images/avatar-temp.png")}
+              style={styles.avatarTempImage}/>
+            <Text
+              style={styles.drWhatText}>Dr. What</Text>
+            <Text
+              style={styles.phoneBoothAndroText}>1 Phone Booth, Andromeda</Text>
+            <View
+              style={{
+                flex: 1,
+              }}/>
+            <Text
+              style={styles.travelerDreamerText}>Traveler, dreamer, showman. Occasionally gets into fight, not always survives.</Text>
           </View>
-          <Form style={{marginTop: 25, marginLeft: 5, marginRight: 15}}>
-            <Item inlineLabel>
-              <Label style={{width: "50%"}}>Select Crytocurrency</Label>
-              <Picker
-                mode="dropdown"
-                // iosIcon={<Icon name="arrow-down" />}
-                style={{ width: undefined }}
-                placeholder="Select your SIM"
-                placeholderStyle={{ color: "#bfc6ea" }}
-                placeholderIconColor="#007aff"
-                selectedValue={this.state.selected2}
-                onValueChange={this.onValueChange2.bind(this)}
-              >
-                <Picker.Item label="Wallet" value="key0" />
-                <Picker.Item label="ATM Card" value="key1" />
-                <Picker.Item label="Debit Card" value="key2" />
-                <Picker.Item label="Credit Card" value="key3" />
-                <Picker.Item label="Net Banking" value="key4" />
-              </Picker>
-            </Item>
-            <Item inlineLabel>
-              <Label style={{width: "50%"}}>Select Amount (COP)</Label>
-              <Input placeholder='Regular Textbox' />
-            </Item>
-            {/*<Item picker>*/}
-            {/*  */}
-            {/*</Item>*/}
-          </Form>
           <View
-            style={{
-              marginTop: 45,
-              marginLeft: 25,
-              marginRight: 25,
-              alignItems: "center",
-              justifyContent: "center",
-            }}>
-            {
-              this.state.showQr ?
-                <QRCode
-                  value={"lsjdflksdjf"}
-                  size={200}
-                  // bgColor='purple'
-                  fgColor='white'/>
-                :
-                <Button
-                  block
-                  success
-                  onPress={() => {
-                    this.setState({
-                      showQr: true
-                    })
-                  }}>
-                  <Text>Start Transaction</Text>
-                </Button>
-            }
-          </View>
-          {/*<Text>*/}
-          {/*  Awaiting...*/}
-          {/*</Text>*/}
+					style={styles.infoBarView}>
+					<View
+						pointerEvents="box-none"
+						style={{
+							position: "absolute",
+							left: 0,
+							right: 0,
+							top: 0,
+							bottom: 0,
+							justifyContent: "center",
+						}}>
+						<View
+							pointerEvents="box-none"
+							style={{
+								height: 44,
+								marginLeft: 42,
+								marginRight: 41,
+								flexDirection: "row",
+								alignItems: "center",
+							}}>
+							<View
+								style={styles.group5View}>
+								<Text
+									style={styles.textText}>365</Text>
+								<View
+									style={{
+										flex: 1,
+									}}/>
+								<Text
+									style={styles.photosText}>Photos</Text>
+							</View>
+							<View
+								style={{
+									flex: 1,
+								}}/>
+							<View
+								style={styles.group7View}>
+								<Text
+									style={styles.textTwoText}>326</Text>
+								<View
+									style={{
+										flex: 1,
+									}}/>
+								<Text
+									style={styles.stalkingText}>Stalking</Text>
+							</View>
+						</View>
+					</View>
+					<View
+						pointerEvents="box-none"
+						style={{
+							position: "absolute",
+							alignSelf: "center",
+							top: 0,
+							bottom: 0,
+							justifyContent: "center",
+						}}>
+						<View
+							style={styles.group6View}>
+							<Text
+								style={styles.kText}>58k</Text>
+							<View
+								style={{
+									flex: 1,
+								}}/>
+							<Text
+								style={styles.stalkersText}>Stalkers</Text>
+						</View>
+					</View>
+				</View>
         </Content>
         <Footer>
           <FooterTab>
@@ -150,3 +166,167 @@ export default class PickerInputExample extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  navigationBarGradient: {
+		flex: 1,
+	},
+	navigationBarItem: {
+	},
+	headerRightContainer: {
+		flexDirection: "row",
+		marginRight: 8,
+	},
+	navigationBarItemTitle: {
+		color: "white",
+	},
+	profileView: {
+		backgroundColor: "rgb(244, 242, 244)",
+    flex: 1,
+    alignItems: "center",
+	},
+	headerView: {
+		backgroundColor: "white",
+		height: 297,
+		marginTop: 64,
+		alignItems: "center",
+	},
+	avatarTempImage: {
+		backgroundColor: "transparent",
+		resizeMode: "center",
+		width: 124,
+		height: 124,
+		marginTop: 25,
+	},
+	drWhatText: {
+		backgroundColor: "transparent",
+		color: "rgb(4, 12, 22)",
+		fontSize: 26,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+		lineHeight: 32,
+		marginTop: 11,
+	},
+	phoneBoothAndroText: {
+		backgroundColor: "transparent",
+		opacity: 0.4,
+		color: "rgb(4, 12, 22)",
+		fontSize: 12,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+		marginTop: 5,
+	},
+	travelerDreamerText: {
+		color: "black",
+		fontSize: 14,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+		lineHeight: 20,
+		backgroundColor: "transparent",
+		width: 300,
+		marginBottom: 27,
+	},
+	infoBarView: {
+		backgroundColor: "rgb(250, 250, 250)",
+		height: 84,
+	},
+	group5View: {
+		backgroundColor: "transparent",
+		width: 42,
+		height: 44,
+	},
+	textText: {
+		backgroundColor: "transparent",
+		color: "rgb(247, 132, 98)",
+		fontSize: 24,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+	},
+	photosText: {
+		backgroundColor: "transparent",
+		opacity: 0.4,
+		color: "black",
+		fontSize: 12,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+		marginLeft: 1,
+		marginRight: 1,
+	},
+	group7View: {
+		backgroundColor: "transparent",
+		width: 43,
+		height: 44,
+	},
+	textTwoText: {
+		backgroundColor: "transparent",
+		color: "rgb(139, 27, 140)",
+		fontSize: 24,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+	},
+	stalkingText: {
+		backgroundColor: "transparent",
+		opacity: 0.4,
+		color: "black",
+		fontSize: 12,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+	},
+	group6View: {
+		backgroundColor: "transparent",
+		width: 43,
+		height: 44,
+	},
+	kText: {
+		color: "rgb(217, 103, 110)",
+		fontSize: 24,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+		backgroundColor: "transparent",
+		marginLeft: 1,
+	},
+	stalkersText: {
+		backgroundColor: "transparent",
+		opacity: 0.4,
+		color: "black",
+		fontSize: 12,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+	},
+	galleryView: {
+		backgroundColor: "transparent",
+		flex: 1,
+		marginLeft: 2,
+		marginRight: 2,
+		marginTop: 20,
+		marginBottom: 52,
+	},
+	latestPhotosText: {
+		backgroundColor: "transparent",
+		opacity: 0.4,
+		color: "black",
+		fontSize: 12,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		alignSelf: "center",
+	},
+	photosFlatList: {
+		backgroundColor: "transparent",
+		width: "100%",
+		height: "100%",
+	},
+	photosFlatListViewWrapper: {
+		height: 122,
+		marginTop: 13,
+	},
+})
