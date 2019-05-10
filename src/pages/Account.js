@@ -57,7 +57,7 @@ export default class PickerInputExample extends Component {
           <View
           style={styles.profileView}>
             <Image
-              source={require("./../../assets/images/avatar-temp.png")}
+              source={require("./../../assets/images/profile-pic.png")}
               style={styles.avatarTempImage}/>
             <Text
               style={styles.drWhatText}>Dr. What</Text>
@@ -141,6 +141,11 @@ export default class PickerInputExample extends Component {
 						</View>
 					</View>
 				</View>
+					<Button>
+						<Text>
+							Hello
+						</Text>
+					</Button>
         </Content>
         <Footer>
           <FooterTab>
