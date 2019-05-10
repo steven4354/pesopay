@@ -1,94 +1,30 @@
-import SideMenu from 'react-native-side-menu';
-import React, {Component} from 'react'
-import {Text, View, StyleSheet} from 'react-native'
-import Menu from './Menu'
-import LinearGradient from "react-native-linear-gradient";
+import React from 'react'
+import { StyleSheet, Button, View } from 'react-native'
+import email from 'react-native-email'
 
-class ContentView extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-
-    const { params = {} } = navigation.state
-    return {
-      headerTransparent: true,
-      headerBackground: <LinearGradient
-        start={{
-          x: -0.01,
-          y: 0.51,
-        }}
-        end={{
-          x: 1.01,
-          y: 0.49,
-        }}
-        locations={[0, 1]}
-        colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}
-        style={styles.navigationBarGradient}/>,
-      title: "PesoPay",
-      headerTintColor: "white",
-      headerLeft: null,
-      headerRight: null,
-      headerStyle: {
-      },
-    }
-  }
+export default class App extends React.Component {
   render() {
     return (
-      <View style={{
-        width: "100%",
-        height: "100%",
-        backgroundColor: "white"
-      }}>
-        <Text>HEllo</Text>
+      <View style={styles.container}>
+        <Button title="Send Mail" onPress={this.handleEmail} />
       </View>
-    );
+    )
   }
-}
 
-export default class Application extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-
-    const { params = {} } = navigation.state
-    return {
-      headerTransparent: true,
-      headerBackground: <LinearGradient
-        start={{
-          x: -0.01,
-          y: 0.51,
-        }}
-        end={{
-          x: 1.01,
-          y: 0.49,
-        }}
-        locations={[0, 1]}
-        colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}
-        style={styles.navigationBarGradient}/>,
-      title: "PesoPay",
-      headerTintColor: "white",
-      headerLeft: null,
-      headerRight: null,
-      headerStyle: {
-      },
-    }
-  }
-  onMenuItemSelected = item =>
-    this.setState({
-      isOpen: false,
-      selectedItem: item,
-    });
-  render() {
-    const menu = <Menu onItemSelected={this.onMenuItemSelected} />;
-    return (
-      <SideMenu
-        menu={menu}
-        isOpen={true}
-      >
-        <ContentView/>
-      </SideMenu>
-    );
+  handleEmail = () => {
+    const to = ['edison4354@gmail.com'] // string or array of email addresses
+    email(to, {
+      subject: 'Show how to use',
+      body: 'Some body right here'
+    }).catch(console.error)
   }
 }
 
 const styles = StyleSheet.create({
-  navigationBarGradient: {
+  container: {
     flex: 1,
-  },
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 })

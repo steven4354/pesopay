@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View } from "react-native";
+import {TouchableHighlight, View} from "react-native";
 import { Icon, Footer, FooterTab, Button, Text, Container, Header, Content, Form, Item, Picker, Label, Input } from 'native-base';
 import QRCode from 'react-native-qrcode';
 import LinearGradient from "react-native-linear-gradient";
+import email from "react-native-email"
 
 class HeaderGradient extends Component {
   render() {
@@ -41,20 +42,17 @@ export default class PickerInputExample extends Component {
       <Container>
         <Header/>
         <Content contentContainerStyle={{justifyContent: 'center', alignItems: 'center', height: "100%"}}>
-          <View
-            style={{
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: "50%"
-            }}>
-            <Text style={{
-              fontSize: 40,
-              fontWeight: 'bold',
-              fontFamily: 'AvenirNext-BoldItalic'
-            }}>
-            Coming Soon</Text>
-          </View>
+          <TouchableHighlight onPress={this.handleEmail}>
+            <Text
+              style={{color: "black",
+                padding: 15,
+                fontSize: 18,
+                fontStyle: "normal",
+                fontWeight: "normal",
+                textAlign: "center",
+                backgroundColor: "transparent",
+                marginTop: 20,}}> We are building out feature to support credit card and debit card payment soon. If you would like us to prioritize and give you a data version early email us by clicking this text. </Text>
+          </TouchableHighlight>
         </Content>
         <Footer>
           <FooterTab>
@@ -78,5 +76,11 @@ export default class PickerInputExample extends Component {
         </Footer>
       </Container>
     );
+  }
+  handleEmail = () => {
+    const to = ['edison4354@gmail.com'] // string or array of email addresses
+    email(to, {
+      subject: 'Request for credit card and debit card payment data version'
+    }).catch(console.error)
   }
 }

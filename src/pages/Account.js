@@ -141,11 +141,14 @@ export default class PickerInputExample extends Component {
 						</View>
 					</View>
 				</View>
-					<Button>
-						<Text>
-							Hello
-						</Text>
+				<View>
+					<Button style={styles.withdrawButton}>
+						<Text style={styles.buttonText}>WITHDRAW</Text>
 					</Button>
+					<Button style={styles.chatButton}>
+						<Text style={styles.buttonText}>CHAT</Text>
+					</Button>
+				</View>
         </Content>
         <Footer>
           <FooterTab>
@@ -173,6 +176,47 @@ export default class PickerInputExample extends Component {
 }
 
 const styles = StyleSheet.create({
+	buttonText: {
+		color: "rgb(217, 103, 110)",
+		fontSize: 15,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+	},
+	chatButton: {
+		backgroundColor: "white",
+		borderRadius: 20,
+		shadowColor: "rgba(0, 0, 0, 0.2)",
+		shadowRadius: 15,
+		shadowOpacity: 0.7,
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "center",
+		padding: 0,
+		alignSelf: "stretch",
+		height: 60,
+		marginTop: 20,
+		marginLeft: 20,
+		marginRight: 20,
+		marginBottom: 11,
+	},
+	withdrawButton: {
+		backgroundColor: "white",
+		borderRadius: 20,
+		shadowColor: "rgba(0, 0, 0, 0.2)",
+		shadowRadius: 15,
+		shadowOpacity: 0.7,
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "center",
+		padding: 0,
+		alignSelf: "stretch",
+		height: 60,
+		marginTop: 60,
+		marginLeft: 20,
+		marginRight: 20,
+		marginBottom: 11,
+	},
   navigationBarGradient: {
 		flex: 1,
 	},
