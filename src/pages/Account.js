@@ -3,6 +3,7 @@ import { View, StyleSheet, Image } from "react-native";
 import { Icon, Footer, FooterTab, Button, Text, Container, Header, Content, Form, Item, Picker, Label, Input } from 'native-base';
 import QRCode from 'react-native-qrcode';
 import LinearGradient from "react-native-linear-gradient";
+import email from 'react-native-email';
 
 class HeaderGradient extends Component {
   render() {
@@ -145,7 +146,7 @@ export default class PickerInputExample extends Component {
 					<Button style={styles.withdrawButton}>
 						<Text style={styles.buttonText}>WITHDRAW</Text>
 					</Button>
-					<Button style={styles.chatButton}>
+					<Button onPress={this.handleEmail} style={styles.chatButton}>
 						<Text style={styles.buttonText}>CHAT</Text>
 					</Button>
 				</View>
@@ -173,6 +174,12 @@ export default class PickerInputExample extends Component {
       </Container>
     );
   }
+	handleEmail = () => {
+		const to = ['edison4354@gmail.com'] // string or array of email addresses
+		email(to, {
+			subject: 'Chat'
+		}).catch(console.error)
+	}
 }
 
 const styles = StyleSheet.create({
@@ -182,8 +189,10 @@ const styles = StyleSheet.create({
 		fontStyle: "normal",
 		fontWeight: "normal",
 		textAlign: "center",
+		padding: 6,
 	},
 	chatButton: {
+	  flex: 1,
 		backgroundColor: "white",
 		borderRadius: 20,
 		shadowColor: "rgba(0, 0, 0, 0.2)",
@@ -192,15 +201,15 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "center",
-		padding: 0,
 		alignSelf: "stretch",
-		height: 60,
-		marginTop: 20,
+		height: '100%',
+		marginTop: 30,
 		marginLeft: 20,
 		marginRight: 20,
-		marginBottom: 11,
+    marginBottom:10,
 	},
 	withdrawButton: {
+	  flex: 1,
 		backgroundColor: "white",
 		borderRadius: 20,
 		shadowColor: "rgba(0, 0, 0, 0.2)",
@@ -209,13 +218,12 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "center",
-		padding: 0,
 		alignSelf: "stretch",
-		height: 60,
-		marginTop: 60,
+		height: '100%',
+		marginTop: 30,
 		marginLeft: 20,
 		marginRight: 20,
-		marginBottom: 11,
+    marginBottom:10,
 	},
   navigationBarGradient: {
 		flex: 1,
