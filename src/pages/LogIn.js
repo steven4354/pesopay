@@ -2,8 +2,28 @@ import React, {Component} from 'react';
 import { Image, Text, TouchableOpacity, View, StyleSheet, TextInput } from "react-native"
 import LinearGradient from 'react-native-linear-gradient';
 
+class HeaderGradient extends Component {
+  render() {
+    return(
+      <LinearGradient
+        start={{
+					x: 0.31,
+					y: 1.1,
+				}}
+				end={{
+					x: 0.69,
+					y: -0.1,
+				}}
+        style={{flex: 1}}
+        colors={["rgb(45, 45, 45)", "rgb(90, 184, 138)"]}>
+      </LinearGradient>
+    )
+  }
+}
+
 export default class LogIn extends Component {
   static navigationOptions = ({ navigation }) => ({
+    header: HeaderGradient,
     headerStyle: {
       color: "white",
       backgroundColor: "rgb(139, 27, 140)",
@@ -21,28 +41,28 @@ export default class LogIn extends Component {
 
     const { navigate } = this.props.navigation
 
-    navigate("RecieveCrypto")
+    navigate("Map")
   }
   render() {
     return(
-      <LinearGradient style={{flex: 1}} colors={["rgb(139, 27, 140)", "rgb(247, 132, 98)"]}>
+      <LinearGradient style={{flex: 1}} colors={["rgb(45, 45, 45)", "rgb(90, 184, 138)"]}>
         <View
           style={styles.loginView}>
           <Text
-            style={styles.logInText}>Iniciar sesión</Text>
-          <Text
-            style={styles.welcomeBackText}>Bienvenido.{"\n"}Introduce tus detalles abajo.</Text>
+            style={styles.logInText}>GoSearch</Text>
+          {/* <Text
+            style={styles.welcomeBackText}>Bienvenido.{"\n"}Introduce tus detalles abajo.</Text> */}
           <View
             style={styles.loginFieldsView}>
             <TextInput
               autoCorrect={false}
-              placeholder="Correo electrónico"
+              placeholder="Username"
               style={styles.yourNicknameTextInput}/>
             <View
               style={styles.separatorView}/>
             <TextInput
               autoCorrect={false}
-              placeholder="Contraseña"
+              placeholder="Password"
               secureTextEntry={true}
               style={styles.yourPasswordTextInput}/>
           </View>
@@ -53,11 +73,8 @@ export default class LogIn extends Component {
           <TouchableOpacity
             onPress={this.onLoginPressed}
             style={styles.loginButton}>
-            <Image
-              source={require("./../../assets/images/icon-log-in.png")}
-              style={styles.loginButtonImage}/>
             <Text
-              style={styles.loginButtonText}>INICIA SESION</Text>
+              style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={this.onForgotYourPasswordPressed}
@@ -98,9 +115,9 @@ const styles = StyleSheet.create({
   logInText: {
     backgroundColor: "transparent",
     color: "white",
-    fontSize: 42,
+    fontSize: 72,
     fontStyle: "normal",
-    fontWeight: "normal",
+    fontWeight: "bold",
     textAlign: "center",
     marginTop: 114,
   },
@@ -123,7 +140,7 @@ const styles = StyleSheet.create({
     height: 101,
     marginLeft: 20,
     marginRight: 20,
-    marginTop: 72,
+    marginTop: 302,
   },
   yourNicknameTextInput: {
     color: "black",
@@ -159,7 +176,7 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     backgroundColor: "white",
-    borderRadius: 2,
+    borderRadius: 8,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
@@ -174,10 +191,10 @@ const styles = StyleSheet.create({
     marginBottom: 11,
   },
   loginButtonText: {
-    color: "rgb(217, 103, 110)",
-    fontSize: 15,
+    color: "rgb(90, 184, 138)",
+    fontSize: 16,
     fontStyle: "normal",
-    fontWeight: "normal",
+    fontWeight: "bold",
     textAlign: "center",
   },
   loginButtonImage: {

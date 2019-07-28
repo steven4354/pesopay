@@ -15,7 +15,7 @@ class HeaderGradient extends Component {
 					y: -0.1,
 				}}
         style={{flex: 1}}
-        colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}>
+        colors={["rgb(45, 45, 45)", "rgb(90, 184, 138)"]}>
       </LinearGradient>
     )
   }
@@ -62,19 +62,14 @@ export default class Welcome extends Component {
 					y: -0.1,
 				}}
         style={{flex: 1}}
-        colors={["rgb(247, 132, 98)", "rgb(139, 27, 140)"]}>
+        colors={["rgb(45, 45, 45)", "rgb(90, 184, 138)"]}>
 
         <View style={styles.welcomeView}>
-          <View style={styles.imageWrapper}>
-            <Image
-              source={require("./../../assets/images/pay-logo-7.png")}
-              style={styles.logoImage}/>
-          </View>
           <View style={{flexDirection: "row"}}>
-            <Text style={styles.spacebookText}>PesoPay</Text>
+            <Text style={styles.spacebookText}>GoSearch</Text>
             <Text style={styles.spacebookTextSuperscript}>TM</Text>
           </View>
-          <Text style={styles.conquerTheStarsText}>Acepta cualquier crypto {"\n"} y convertir a peso.</Text>
+          <Text style={styles.conquerTheStarsText}>Find Out Where {"\n"} Your Intreset Can Lead You</Text>
           <View
             style={{
               flex: 1,
@@ -84,11 +79,8 @@ export default class Welcome extends Component {
               style={styles.signUpButton}
               onPress={this.onSignUpPressed}
             >
-              <Image
-                source={require("./../../assets/images/icon-sign-up.png")}
-                style={styles.signUpButtonImage}/>
               <Text
-                style={styles.signUpButtonText}>Regístrate</Text>
+                style={styles.signUpButtonText}>Signup</Text>
             </TouchableOpacity>
             <View
               style={{
@@ -98,15 +90,12 @@ export default class Welcome extends Component {
               style={styles.logInButton}
               onPress={this.onLogInPressed}
             >
-              <Image
-                source={require("./../../assets/images/icon-log-in.png")}
-                style={styles.logInButtonImage}/>
               <Text
-                style={styles.logInButtonText}>Iniciar sesión</Text>
+                style={styles.logInButtonText}>Login</Text>
             </TouchableOpacity>
           </View>
           <Text
-						style={styles.supernovaStudioText}>© 2019 PesoPay Global</Text>
+						style={styles.supernovaStudioText}>© 2019 GoSearch Global</Text>
         </View>
       </LinearGradient>
     )
@@ -158,7 +147,7 @@ const styles = StyleSheet.create({
   },
   signUpButton: {
     backgroundColor: "white",
-    borderRadius: 2,
+    borderRadius: 8,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
@@ -170,10 +159,10 @@ const styles = StyleSheet.create({
     height: 60,
   },
   signUpButtonText: {
-    color: "rgb(217, 103, 110)",
-    fontSize: 15,
+    color: "rgb(90, 184, 138)",
+    fontSize: 16,
     fontStyle: "normal",
-    fontWeight: "normal",
+    fontWeight: "bold",
     textAlign: "center",
   },
   signUpButtonImage: {
@@ -182,7 +171,7 @@ const styles = StyleSheet.create({
   },
   logInButton: {
     backgroundColor: "white",
-    borderRadius: 2,
+    borderRadius: 8,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowRadius: 25,
     shadowOpacity: 1,
@@ -198,10 +187,10 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   logInButtonText: {
-    color: "rgb(218, 104, 109)",
-    fontSize: 15,
+    color: "rgb(90, 184, 138)",
+    fontSize: 16,
     fontStyle: "normal",
-    fontWeight: "normal",
+    fontWeight: "bold",
     textAlign: "center",
   },
   viewView: {
@@ -216,21 +205,21 @@ const styles = StyleSheet.create({
   },
   spacebookText: {
     color: "white",
-    fontSize: 42,
+    fontSize: 65,
     fontStyle: "normal",
-    fontWeight: "normal",
+    fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "transparent",
-    marginTop: 60,
+    marginTop: 120,
   },
   spacebookTextSuperscript: {
     color: "white",
     fontSize: 17,
     fontStyle: "normal",
-    fontWeight: "normal",
+    fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "transparent",
-    marginTop: 68,
+    marginTop: 128,
   },
   conquerTheStarsText: {
     color: "white",
